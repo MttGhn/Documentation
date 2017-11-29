@@ -131,11 +131,7 @@ CTRL+C
 <p>4.
 Maintenant on va copier le contenu de la carte Micro SD sur la mémoire EMMC avec la commande 
 suivante :
-sudo  nand
--
-sata
--
-install
+	<code>sudo nand-sata-install</code> 
 (A
 cceptez tout en appuyant 3x sur ENTER). Cela dure 30 minutes environ.
 A la fin choisir Power OFF
@@ -147,11 +143,8 @@ Eteindre l'Orange PI+ 2
 sudo poweroff
 retirer la SD du lecteur, Rebranchez l'alimentation pour démarrer l’OPI+2...
 Là on va le configurer. Clavier :
-dpkg
--
-reconfigure  keyboard
--
-configuration
+	
+<code> dpkg-reconfigure  keyboard-configuration</code> 
 
 </p>		
 					
