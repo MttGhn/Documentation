@@ -248,8 +248,7 @@ install.sh)</p>
                    <p>13.
 Attention a ne pas poursuivre cette étape, si l'étape 10 n'a pas été bien exécutée.
 Exécuter install.sh en donnant le mot de passe prédéfini durant l'installation
-<code> sudo ./install.sh –m MOT_DE_PASSE_DE_VOTRE_CHOIX </code>
-L’opération va durer environ 20 minutes, JEEDOM va s’installer. Une foi l’installation finie, redémarrer 
+<code> sudo ./install.sh –m MOT_DE_PASSE_DE_VOTRE_CHOIX</code>. L’opération va durer environ 20 minutes, JEEDOM va s’installer. Une foi l’installation finie, redémarrer 
 <code> sudo reboot </code>
 Maintenant, on peut passer sur l’ordianteur pour avoir acces à Jeedom via le navigateur internet à l’adresse 
 ip fournie par le routeur, ou
@@ -296,11 +295,7 @@ le code suivant
 permet à SSH
 -
 Client d’oublier l’ancien serveur. Un foi sa mémoire vide il acceptera ne nouveau.
-ssh
--
-keygen 
-–
-R 192.168.0.xx
+<code>ssh -keygen –R 192.168.0.xx</code>
 Cette commande signifie
 : Vider le cache concernant cette IP.</p>
           
