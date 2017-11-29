@@ -54,6 +54,13 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
+code {
+	background-color: navy;
+	color: white;
+
+}
+
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
