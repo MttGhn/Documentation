@@ -144,7 +144,7 @@ sudo poweroff
 retirer la SD du lecteur, Rebranchez l'alimentation pour démarrer l’OPI+2...
 Là on va le configurer. Clavier :
 	
-<code> dpkg-reconfigure  keyboard-configuration</code> 
+<code>dpkg-reconfigure  keyboard-configuration</code> 
 
 </p>		
 					
@@ -167,14 +167,14 @@ Là on va le configurer. Clavier :
 -
 > No compose key
 Timezone :
-dpkg-reconfigure tzdata
+<code>dpkg-reconfigure tzdata</code>
 Choisissez EUROPE 
 -
 > PARIS, c'est fait!</p>
 					<p>6.
 Initialiser le WIFI par la
 commande suivante :
-sudo nmtui
+<code>sudo nmtui</code>
 Choisissez ACTIVATE A CONNECTION 
 -
 > Choisissez votre wifi 
@@ -185,7 +185,7 @@ Choisissez ACTIVATE A CONNECTION
 					
 <p>6.5
 Redémarrez pour rendre effectifs les changements
-sudo reboot
+<code>sudo reboot</code>
 </p>
                	
                 <p>7.
@@ -194,26 +194,18 @@ répertoire
 de paquets de 
 Ondrej
 pour le php :
-sudo add
--
-apt
--
-repository ppa:ondrej/php</p>
+<code>sudo add-apt-repository ppa:ondrej/php</code></p>
                 <p>8.
 Actualisez les sources
-sudo apt
--
-get update puis, redémarrez pour rendre effectifs les 
+<code>sudo apt-get update<code> puis, redémarrez pour rendre effectifs les 
 changements sudo reboot</p>
                 <p>9.
 Appliquez les changements avec les nouvelles sources
-sudo apt
--
-get upgrade
+<code>sudo apt-get upgrade</code>
 Cette Opération dure environ 25 minutres.</p>
                 <p> 
 
-sudo reboot</p>
+<code>sudo reboot</code></p>
                 
 				
 				
@@ -238,11 +230,7 @@ sudo reboot</p>
                 
                 <p>10.
 Installez manuellement MYSQL avant d'executer le script jeedom
-sudo apt
--
-get install mysql
--
-server
+<code>sudo apt-get install mysql-server</code>
 (Definir le MDP pour root
 pendant l’installation : MOT_DE_PASSE_DE_VOTRE_CHOIX)</p>
                 <p>11.
@@ -250,20 +238,17 @@ installer depuis une source github
 , la dernière version de JEEDOM.
 Code :
 Tout sélectionner
-wget https://raw.githubusercontent.com/jeedom/core/stable/install/install.sh</p>
+<code>wget https://raw.githubusercontent.com/jeedom/core/stable/install/install.sh<code></p>
                <p>12.
 Rendre executable install.sh
-chmod
-+x install.sh
+<code>chmod +x install.sh<code>
 (rend 
 exécutable
 install.sh)</p>
                    <p>13.
 Attention a ne pas poursuivre cette étape, si l'étape 10 n'a pas été bien exécutée.
 Exécuter install.sh en donnant le mot de passe prédéfini durant l'installation
-sudo ./install.sh
-–
-m MOT_DE_PASSE_DE_VOTRE_CHOIX
+<code>sudo ./install.sh –m MOT_DE_PASSE_DE_VOTRE_CHOIX</code>
 L’opération va durer environ 20 minutes, JEEDOM va s’installer. Une foi l’installation finie, redémarrer 
 sudo reboot
 Maintenant, on peut passer sur l’ordianteur pour avoir acces à Jeedom via le navigateur internet à l’adresse 
