@@ -303,7 +303,7 @@ Cette commande signifie
 				<h2 id="st3">Sécurisation du serveur Linux</h2>
 				<div class="col-md-12">
                 
-                <p>15. Maintenant on va sécuriser l'accès ssh par une double authentification. 2FA ( deux facteurs d'authentification). Il faut don déjà installer le logiciel google authenticator <code> sudo apt-get install libpam-google-authenticator</code>.
+                <p><b>15.</b> Maintenant on va sécuriser l'accès ssh par une double authentification. 2FA ( deux facteurs d'authentification). Il faut don déjà installer le logiciel google authenticator <code> sudo apt-get install libpam-google-authenticator</code>.
 			En suite il faut telecharger google authenticator sur le smartphone. Une fois l'app installée, lancer la commande <code>google-authenticator</code>. Scanner le QR code avec l'app Google Authenticator. Répondre Yes aux 4 questions. Maintenant il faut configurer le serveur.
 			Pour cela il faut ouvrir la config de la librairie pam par le code suivant :
 			<code>sudo nano /etc/pam.d/sshd</code> et rajouter tout en bas du document "auth required pam_google_authenticator.so". Enregistrer et fermer. Désormais il faut configurer le prgroamme openssh et lui faire admettre la double authetification. Pour cela :
