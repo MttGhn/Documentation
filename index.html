@@ -87,7 +87,7 @@
 				<h2 id="st1">Initialisation de l'Orange Pi +2</h2>
 				<div class="col-md-6">
                 
-<p>1.
+<p><b>1.</b>
 Telecharger l'image Armbian pour OPI+
 2 sur leur site officiel Choisir
 UBUNTU SERVER 
@@ -98,7 +98,7 @@ KERNEL
 					
 					
 					
-<p>2.
+<p><b>2.</b>
 Formater la micro SD avec
 SDformatter
 puis charger l'image sur la 
@@ -110,7 +110,7 @@ avec Win32DiskImager
 </p>
 					
 					
-<p>3.
+<p><b>3.</b>
 Insérer la carte micro SD dans l’OrangePI+ 2 brancher clavier, écran, et l'alimentation. Apres démarrage 
 s’identifier avec les identifiant/mot_de_passe par défaut:
 root/1234
@@ -128,7 +128,7 @@ CTRL+C
 </p>
 					
 					
-<p>4.
+<p><b>4.</b>
 Maintenant on va copier le contenu de la carte Micro SD sur la mémoire EMMC avec la commande 
 suivante :
 	<code>sudo nand-sata-install</code> 
@@ -138,7 +138,7 @@ A la fin choisir Power OFF
 </p>
 
 
-<p>5.
+<p><b>5.</b>
 Eteindre l'Orange PI+ 2
 sudo poweroff
 retirer la SD du lecteur, Rebranchez l'alimentation pour démarrer l’OPI+2...
@@ -171,7 +171,7 @@ Timezone :
 Choisissez EUROPE 
 -
 > PARIS, c'est fait!</p>
-					<p>6.
+					<p><b>6.</b>
 Initialiser le WIFI par la
 commande suivante :
 <code>sudo nmtui</code>
@@ -183,17 +183,17 @@ Choisissez ACTIVATE A CONNECTION
 </p>
 					
 					
-<p>7
+<p><b>7.</b>
 Redémarrez pour rendre effectifs les changements
 <code>sudo reboot</code>
 </p>
                	
                 
-                <p>8.
+                <p><b>8.</b>
 Actualisez les sources
 <code>sudo apt-get update</code> puis, redémarrez pour rendre effectifs les 
 changements sudo reboot</p>
-                <p>9.
+                <p><b>9.</b>
 Appliquez les changements avec les nouvelles sources
 <code>sudo apt-get upgrade</code>
 Cette Opération dure environ 25 minutres.</p>
@@ -222,23 +222,23 @@ Cette Opération dure environ 25 minutres.</p>
 				<h2 id="st2">Préparation et installation du logiciel</h2>
 				<div class="col-md-6">
                 
-                <p>10.
+                <p><b>10.</b>
 Installez manuellement MYSQL avant d'executer le script jeedom
 <code> sudo apt-get install mysql-server </code>
 (Definir le MDP pour root
 pendant l’installation : MOT_DE_PASSE_DE_VOTRE_CHOIX)</p>
-                <p>11.
+                <p><b>11.</b>
 installer depuis une source github
 , la dernière version de JEEDOM.
 Code :
 Tout sélectionner  <code> wget https://raw.githubusercontent.com/jeedom/core/stable/install/install.sh </code> </p>
-               <p>12.
+               <p><b>12.</b>
 Rendre executable install.sh
 <code> chmod +x install.sh </code>
 (rend 
 exécutable
 install.sh)</p>
-                   <p>13.
+                   <p><b>13.</b>
 Attention a ne pas poursuivre cette étape, si l'étape 10 n'a pas été bien exécutée.
 Exécuter install.sh en donnant le mot de passe prédéfini durant l'installation
 <code> sudo ./install.sh –m MOT_DE_PASSE_DE_VOTRE_CHOIX</code>. L’opération va durer environ 20 minutes, JEEDOM va s’installer. Une foi l’installation finie, redémarrer 
@@ -258,7 +258,7 @@ SSH. </p>
                	
                 <p>Egalement on peut se connecter en SSH avec FileZilla pour visualiser graphiquement les fichiers du 
 serveur.<br>
-14. Une fois installé se connecter en SSH à travers BASH. Par la 
+<b>14.</b> Une fois installé se connecter en SSH à travers BASH. Par la 
 commande
 <code>ssh root@192.168.0.xx</code>
 Si le message «
