@@ -86,7 +86,13 @@
 				<div class="raw">
 				<h2 id="st1">Initialisation de l'Orange Pi +2</h2>
 				<div class="col-md-6">
-                
+
+					
+					
+					
+					<!-- Point 1 -->
+					
+					
 <p><b>1.</b>
 Telecharger l'image Armbian pour OPI+
 2 sur leur site officiel Choisir
@@ -96,6 +102,9 @@ LEFGACY
 KERNEL
 </p>
 					
+			
+					
+					<!-- Point 2 -->
 					
 					
 <p><b>2.</b>
@@ -108,6 +117,10 @@ dument
 formatée 
 avec Win32DiskImager
 </p>
+			
+					
+					<!-- Point 3 -->
+					
 					
 					
 <p><b>3.</b>
@@ -126,6 +139,11 @@ MOT_DE_PASSE
 creer un nouvel utilisateur. Déclinez en pressant simultanément
 CTRL+C
 </p>
+	
+					
+					
+					<!-- Point 4 -->
+					
 					
 					
 <p><b>4.</b>
@@ -137,6 +155,9 @@ suivante :
 A la fin choisir Power OFF
 </p>
 
+					
+					<!-- Point 5 -->
+					
 
 <p><b>5.</b>
 Eteindre l'Orange PI+ 2
@@ -171,7 +192,12 @@ Timezone :
 Choisissez EUROPE 
 -
 > PARIS, c'est fait!</p>
-					<p><b>6.</b>
+					
+					
+					<!-- Point 6 -->
+					
+					
+<p><b>6.</b>
 Initialiser le WIFI par la
 commande suivante :
 <code>sudo nmtui</code>
@@ -181,6 +207,10 @@ Choisissez ACTIVATE A CONNECTION
 -
 > Entrez le MdP, c'est fait!
 </p>
+	
+					
+					
+					<!-- Point 7 -->
 					
 					
 <p><b>7.</b>
@@ -189,10 +219,19 @@ Redémarrez pour rendre effectifs les changements
 </p>
                	
                 
+					
+					<!-- Point 8 -->
+					
+					
                 <p><b>8.</b>
 Actualisez les sources
 <code>sudo apt-get update</code> puis, redémarrez pour rendre effectifs les 
 changements sudo reboot</p>
+					
+					
+					<!-- Point 9 -->
+					
+					
                 <p><b>9.</b>
 Appliquez les changements avec les nouvelles sources
 <code>sudo apt-get upgrade</code>
@@ -222,22 +261,45 @@ Cette Opération dure environ 25 minutres.</p>
 				<h2 id="st2">Préparation et installation du logiciel</h2>
 				<div class="col-md-6">
                 
+					
+					
+					<!-- Point 10 -->
+					
+					
+					
                 <p><b>10.</b>
 Installez manuellement MYSQL avant d'executer le script jeedom
 <code> sudo apt-get install mysql-server </code>
 (Definir le MDP pour root
 pendant l’installation : MOT_DE_PASSE_DE_VOTRE_CHOIX)</p>
+					
+					
+					<!-- Point 11 -->
+					
+					
                 <p><b>11.</b>
 installer depuis une source github
 , la dernière version de JEEDOM.
 Code :
 Tout sélectionner <br>  <code> wget https://raw.githubusercontent.com/jeedom/core/stable/install/install.sh </code> </p>
+					
+					
+					
+					<!-- Point 12 -->
+					
+					
                <p><b>12.</b>
 Rendre executable install.sh
 <code> chmod +x install.sh </code>
 (rend 
 exécutable
 install.sh)</p>
+					
+					
+					<!-- Point 13 -->
+					
+					
+					
                    <p><b>13.</b>
 Attention a ne pas poursuivre cette étape, si l'étape 10 n'a pas été bien exécutée.
 Exécuter install.sh en donnant le mot de passe prédéfini durant l'installation
@@ -258,6 +320,13 @@ SSH. </p>
                	
                 <p>Egalement on peut se connecter en SSH avec FileZilla pour visualiser graphiquement les fichiers du 
 serveur.<br>
+			
+			
+			
+			<!-- Point 14 -->
+			
+			
+			
 <b>14.</b> Une fois installé se connecter en SSH à travers BASH. Par la 
 commande
 <code>ssh root@192.168.0.xx</code>
@@ -302,7 +371,11 @@ Cette commande signifie
 				<div class="raw">
 				<h2 id="st3">Sécurisation du serveur Linux</h2>
 				<div class="col-md-12">
-                
+					
+					
+					<!-- Point 15 -->					
+					
+					
                 <p><b>15.</b> Maintenant on va sécuriser l'accès ssh par une double authentification. 2FA ( deux facteurs d'authentification). Il faut don déjà installer le logiciel google authenticator <code> sudo apt-get install libpam-google-authenticator</code>.
 			En suite il faut telecharger google authenticator sur le smartphone. Une fois l'app installée, lancer la commande <code>google-authenticator</code>. Scanner le QR code avec l'app Google Authenticator. Répondre Yes aux 4 questions. Maintenant il faut configurer le serveur.
 			Pour cela il faut ouvrir la config de la librairie pam par le code suivant :
@@ -324,130 +397,136 @@ Cette commande signifie
 		<div class="raw">
 
                 <h2 id="st4">Config du DynHost OVH</h2>
-			<p><b>16.</b> Créer un identifiant sur OVH et définir le suffixe de l’identifiant, le sous-domaine, login et mot de passe. 
 			
-			<br>
-			<br>
+			
+			
+			<!-- Point 16 -->
+			
+			
+			
+			
+<p><b>16.</b> Créer un identifiant sur OVH et définir le suffixe de l’identifiant, le sous-domaine, login et mot de passe. 
+			
+<br>
+<br>
 	
-			Exemple :
-			<br>
-			<br>
+Exemple :
+<br>
+<br>			
+Suffixe identifiant : atelier-bleubanane.fr-andrea	(dans le fichier.conf il sera noté dans la partie login comme si dessous)
+<br>
+Sous-domaine : ino.atelier-bleubanane.fr
+<br>
+Mot de passe : gondor476
+
+<br>
+<br>
+Installation de ddclient.conf :
 			
-			Suffixe identifiant : atelier-bleubanane.fr-andrea	(dans le fichier.conf il sera noté dans la partie login comme si dessous)
-			<br>
-			Sous-domaine : ino.atelier-bleubanane.fr
-			<br>
-			Mot de passe : gondor476
-			
-			<br>
-			<br>
-			Installation de ddclient.conf :
-			
-			<br>
-			<br>
-			Installation : sudo apt-get install ddclient
-			<br>
-			Editer le fichier /etc/ddclient.conf
-			<br>
-			Le fichier par défaut, sera comme si dessous :
-			<br>
-			# Configuration file for ddclient generated by debconf
-			<br>
-			#
-			<br>
-			# /etc/ddclient.conf
-			<br>
-			protocol=dyndns2
-			<br>
-			use=web, web=checkip.dyndns.com
-			<br>
-			server=www.ovh.com
-			<br>
-			<b>login=nomdedomaine.net-login
-			<br>
-			password='MDP_du_compte_de_gestion_dynhost'
-			<br>
-			sous.nomdedomaine.fr_lié_au_compte_de_gestion</b>
-			<br>
-			<br>
-			Les trois données notables à changer seront celles, noté en gras, qui correspondent aux données éditées sur le site d’OVH. A quoi on ajoutera la commande daemon=x, qui permet de donner une unité de temps et ainsi, d’exécuter la commande tous les X minutes, heures, etc. (1 minute de tempo : daemon=60).
-			<br>
-			<br>
-			Fichier ddclient.conf fonctionnel le 18/09/2017 :
-			<br>
-			<br>
-			daemon=60
-			<br>
-			protocol=dyndns2
-			<br>
-			use=web, web=checkip.dyndns.com
-			<br>
-			server=www.ovh.com
-			<br>
-			login=atelier-bleubanane.fr-andrea
-			<br>
-			password='gondor476'
-			<br>
-			ino.atelier-bleubanane.fr
-			<br>
-			On peut également y ajouter d’autre lignes, correspondant à d’autre paramètre, comme si dessous :
-			<br>
-			daemon=600                  # check every 600 seconds 
-			<br>
-			syslog=yes                  # log update msgs to syslog 
-			<br>
-			mail=root                   # mail all msgs to root 
-			<br>
-			mail-failure=root           # mail failed update msgs to root 
-			<br>
-			pid=/var/run/ddclient.pid   # record PID in file. 
-			<br>
-			cache=/tmp/ddclient.cache   # Cache file							
-			<br>
-			ssl=yes                     #Protocol ssl
+<br>
+<br>
+Installation : sudo apt-get install ddclient
+<br>
+Editer le fichier /etc/ddclient.conf
+<br>
+Le fichier par défaut, sera comme si dessous :
+<br>
+# Configuration file for ddclient generated by debconf
+<br>
+#
+<br>
+# /etc/ddclient.conf
+<br>
+protocol=dyndns2
+<br>
+use=web, web=checkip.dyndns.com
+<br>
+server=www.ovh.com
+<br>
+<b>login=nomdedomaine.net-login
+<br>
+password='MDP_du_compte_de_gestion_dynhost'
+<br>
+sous.nomdedomaine.fr_lié_au_compte_de_gestion</b>
+<br>
+<br>
+Les trois données notables à changer seront celles, noté en gras, qui correspondent aux données éditées sur le site d’OVH. A quoi on ajoutera la commande daemon=x, qui permet de donner une unité de temps et ainsi, d’exécuter la commande tous les X minutes, heures, etc. (1 minute de tempo : daemon=60).
+<br>
+<br>
+Fichier ddclient.conf fonctionnel le 18/09/2017 :
+<br>
+<br>
+daemon=60
+<br>
+protocol=dyndns2
+<br>
+use=web, web=checkip.dyndns.com
+<br>
+server=www.ovh.com
+<br>
+login=atelier-bleubanane.fr-andrea
+<br>
+password='gondor476'
+<br>
+ino.atelier-bleubanane.fr
+<br>
+On peut également y ajouter d’autre lignes, correspondant à d’autre paramètre, comme si dessous :
+<br>
+daemon=600                  # check every 600 seconds 
+<br>
+syslog=yes                  # log update msgs to syslog 
+<br>
+mail=root                   # mail all msgs to root 
+<br>
+mail-failure=root           # mail failed update msgs to root 
+<br>
+pid=/var/run/ddclient.pid   # record PID in file. 
+<br>
+cache=/tmp/ddclient.cache   # Cache file							
+<br>
+ssl=yes                     #Protocol ssl
 
-			### Select one of these options to determine your IP address 
+### Select one of these options to determine your IP address 
+## via hardware interface (if you don't have a router/firewall) 
+#use=if, if=eth0 
 
-			## via hardware interface (if you don't have a router/firewall) 
-			#use=if, if=eth0 
+## via our CheckIP server 
+use=web, web=checkip.dyndns.com/, web-skip='IP Address' 
 
-			## via our CheckIP server 
-			use=web, web=checkip.dyndns.com/, web-skip='IP Address' 
+## from the status page for a linksys router/firewall 
+#use=linksys, fw=linksys, fw-login=admin, fw-password=admin 
 
-			## from the status page for a linksys router/firewall 
-			#use=linksys, fw=linksys, fw-login=admin, fw-password=admin 
+## from a FW status page 
+#fw-login=admin, fw-password=XXXXXX 
+#use=fw, fw=192.168.1.254/status.htm, fw-skip='IP Address' 
 
-			## from a FW status page 
-			#fw-login=admin, fw-password=XXXXXX 
-			#use=fw, fw=192.168.1.254/status.htm, fw-skip='IP Address' 
+ ## Enter your Ovh DynHost username and password here 
 
-			 ## Enter your Ovh DynHost username and password here 
+login=your-login           # your Ovh DynHost username 
+password=your-password     # your Ovh DynHost password 
 
-			login=your-login           # your Ovh DynHost username 
-			password=your-password     # your Ovh DynHost password 
+## This section requires no changes unless you need to set a default proxy server 
+## or you need to bypass your proxy server (because it interferes with the updates) 
 
-			## This section requires no changes unless you need to set a default proxy server 
-			## or you need to bypass your proxy server (because it interferes with the updates) 
+protocol=dyndns2                    # default protocol 
+server=www.ovh.com           # default server 
+#server=members.dyndns.org:8245     # default server (bypassing proxies) 
+#proxy=fasthttp.sympatico.ca:80     # default proxy 
 
-			protocol=dyndns2                    # default protocol 
-			server=www.ovh.com           # default server 
-			#server=members.dyndns.org:8245     # default server (bypassing proxies) 
-			#proxy=fasthttp.sympatico.ca:80     # default proxy 
+## Default options for Dynamic/Static DNS Hosts 
 
-			## Default options for Dynamic/Static DNS Hosts 
+#mx=             # default MX host (leave undefined by default) 
+#backupmx=NO     # MX host is primary MX? (leave undefined by default) 
+#wildcard=YES     # add wildcard CNAME? 
 
-			#mx=             # default MX host (leave undefined by default) 
-			#backupmx=NO     # MX host is primary MX? (leave undefined by default) 
-			#wildcard=YES     # add wildcard CNAME? 
+## Dynamic DNS hosts go here 
+votre.domaine.com 
 
-			## Dynamic DNS hosts go here 
-			votre.domaine.com 
+## Static DNS hosts go here 
+#static=yes, your-static-host.dyndns.org,another-static-host.dyndns.org 
 
-			## Static DNS hosts go here 
-			#static=yes, your-static-host.dyndns.org,another-static-host.dyndns.org 
-
-			## Custom DNS hosts go here 
-			#custom=yes, your-domain.top-level,your-other-domain.top-level
+## Custom DNS hosts go here 
+#custom=yes, your-domain.top-level,your-other-domain.top-level
 
 
 			</p>
