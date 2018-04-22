@@ -490,49 +490,65 @@ pid=/var/run/ddclient.pid   # record PID in file.
 cache=/tmp/ddclient.cache   # Cache file							
 <br>
 ssl=yes                     #Protocol ssl
-
-### Select one of these options to determine your IP address 
-## via hardware interface (if you don't have a router/firewall) 
+<br>
+### Select one of these options to determine your IP address
+<br>
+## via hardware interface (if you don't have a router/firewall)
+<br>
 #use=if, if=eth0 
-
-## via our CheckIP server 
+<br>
+## via our CheckIP server
+<br>
 use=web, web=checkip.dyndns.com/, web-skip='IP Address' 
-
-## from the status page for a linksys router/firewall 
+<br>
+## from the status page for a linksys router/firewall
+<br>
 #use=linksys, fw=linksys, fw-login=admin, fw-password=admin 
-
-## from a FW status page 
-#fw-login=admin, fw-password=XXXXXX 
-#use=fw, fw=192.168.1.254/status.htm, fw-skip='IP Address' 
-
+<br>
+## from a FW status page
+<br>
+#fw-login=admin, fw-password=XXXXXX
+<br>
+#use=fw, fw=192.168.1.254/status.htm, fw-skip='IP Address'
+<br>
+<br>
  ## Enter your Ovh DynHost username and password here 
-
-login=your-login           # your Ovh DynHost username 
-password=your-password     # your Ovh DynHost password 
-
+<br>
+login=your-login           # your Ovh DynHost username
+<br>
+password=your-password     # your Ovh DynHost password
+<br>
 ## This section requires no changes unless you need to set a default proxy server 
 ## or you need to bypass your proxy server (because it interferes with the updates) 
-
-protocol=dyndns2                    # default protocol 
-server=www.ovh.com           # default server 
-#server=members.dyndns.org:8245     # default server (bypassing proxies) 
-#proxy=fasthttp.sympatico.ca:80     # default proxy 
-
+<br>
+protocol=dyndns2                    # default protocol
+<br>
+server=www.ovh.com           # default server
+<br>
+#server=members.dyndns.org:8245     # default server (bypassing proxies)
+<br>
+#proxy=fasthttp.sympatico.ca:80     # default proxy
+<br>
 ## Default options for Dynamic/Static DNS Hosts 
-
-#mx=             # default MX host (leave undefined by default) 
-#backupmx=NO     # MX host is primary MX? (leave undefined by default) 
-#wildcard=YES     # add wildcard CNAME? 
-
-## Dynamic DNS hosts go here 
-votre.domaine.com 
-
-## Static DNS hosts go here 
+<br>
+#mx=             # default MX host (leave undefined by default)
+<br>
+#backupmx=NO     # MX host is primary MX? (leave undefined by default)
+<br>
+#wildcard=YES     # add wildcard CNAME?
+<br>
+## Dynamic DNS hosts go here
+<br>
+votre.domaine.com
+<br>
+## Static DNS hosts go here
+<br>
 #static=yes, your-static-host.dyndns.org,another-static-host.dyndns.org 
-
+<br>
 ## Custom DNS hosts go here 
+<br>
 #custom=yes, your-domain.top-level,your-other-domain.top-level
-
+<br>
 
 			</p>
             </div>
