@@ -31,11 +31,11 @@
                             <li><a href="#st2">II - Install EEC Monitoring</a></li>
                             <li><a href="#st3">III - Sécurisation Linux</a></li>
 			                <li><a href="#st4">IV - Config du DynHost OVH</a></li>
-                     
+
                     </li>
 
                      <li>
-                        
+
 <!--
 
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"></a>
@@ -50,14 +50,14 @@
                     </li>
                     <li>
                         <a href="#"></a>
-                 
+
 -->
 
 
 
                 <ul class="list-unstyled CTAs">
                     <li><a href="https://github.com/MttGhn/index" class="download">GitHub source</a></li>
-                    
+
                 </ul>
 
             </nav>
@@ -88,174 +88,162 @@
 
 				<div class="container-fluid">
 					<h1>Installation de Armbian Jessie + Elder-EasyCare sur un Orange PiPC+</h1>
-				<div class="raw">
-				<h2 id="st1">Initialisation de l'Orange Pi +2</h2>
-				<div class="col-md-6">
+				      <div class="raw">
+				         <h2 id="st1">Initialisation de l'Orange Pi +2</h2>
+                  <div class="col-md-6">
 
+                      <!-- Point 1 -->
 
 
+                   <p><b>1.</b>
+                   Telecharger l'image Armbian pour OPI+
+                   2 sur leur site officiel Choisir
+                   UBUNTU SERVER
+                   -
+                   LEFGACY
+                   KERNEL
+                   </p>
 
-					<!-- Point 1 -->
 
 
-<p><b>1.</b>
-Telecharger l'image Armbian pour OPI+
-2 sur leur site officiel Choisir
-UBUNTU SERVER
--
-LEFGACY
-KERNEL
-</p>
+                        <!-- Point 2 -->
 
 
+                   <p><b>2.</b>
+                   Formater la micro SD avec
+                   SDformatter
+                   puis charger l'image sur la
+                   même
+                   micro SD
+                   dument
+                   formatée
+                   avec Win32DiskImager
+                   </p>
 
-					<!-- Point 2 -->
 
+                        <!-- Point 3 -->
 
-<p><b>2.</b>
-Formater la micro SD avec
-SDformatter
-puis charger l'image sur la
-même
-micro SD
-dument
-formatée
-avec Win32DiskImager
-</p>
 
 
-					<!-- Point 3 -->
+                   <p><b>3.</b>
+                   Insérer la carte micro SD dans l’OrangePI+ 2 brancher clavier, écran, et l'alimentation. Apres démarrage
+                   s’identifier avec les identifiant/mot_de_passe par défaut:
+                   root/1234
+                   . Confirmez une nouvelle fois
+                   1234
+                   , puis
+                   créez lui un nouveau
+                   MOT_DE_PASSE
+                   . Confir
+                   mez
+                   MOT_DE_PASSE
+                   . Il vous demande maintenant de
+                   creer un nouvel utilisateur. Déclinez en pressant simultanément
+                   CTRL+C
+                   </p>
 
 
 
-<p><b>3.</b>
-Insérer la carte micro SD dans l’OrangePI+ 2 brancher clavier, écran, et l'alimentation. Apres démarrage
-s’identifier avec les identifiant/mot_de_passe par défaut:
-root/1234
-. Confirmez une nouvelle fois
-1234
-, puis
-créez lui un nouveau
-MOT_DE_PASSE
-. Confir
-mez
-MOT_DE_PASSE
-. Il vous demande maintenant de
-creer un nouvel utilisateur. Déclinez en pressant simultanément
-CTRL+C
-</p>
+                        <!-- Point 4 -->
 
 
 
-					<!-- Point 4 -->
+                   <p><b>4.</b>
+                   Maintenant on va copier le contenu de la carte Micro SD sur la mémoire EMMC avec la commande
+                   suivante :
+                     <code>sudo nand-sata-install</code>
+                   (Acceptez tout en appuyant 3x sur ENTER). Cela dure 30 minutes environ.
 
+                   A la fin choisir Power OFF
+                   </p>
 
 
-<p><b>4.</b>
-Maintenant on va copier le contenu de la carte Micro SD sur la mémoire EMMC avec la commande
-suivante :
-	<code>sudo nand-sata-install</code>
-(Acceptez tout en appuyant 3x sur ENTER). Cela dure 30 minutes environ.
+                        <!-- Point 5 -->
 
-A la fin choisir Power OFF
-</p>
 
+                   <p><b>5.</b>
+                   Eteindre l'Orange PI+ 2
+                   sudo poweroff
+                   retirer la SD du lecteur, Rebranchez l'alimentation pour démarrer l’OPI+2...
+                   Là on va le configurer. Clavier :
 
-					<!-- Point 5 -->
+                   <code>dpkg-reconfigure  keyboard-configuration</code>
 
+                   </p>
 
-<p><b>5.</b>
-Eteindre l'Orange PI+ 2
-sudo poweroff
-retirer la SD du lecteur, Rebranchez l'alimentation pour démarrer l’OPI+2...
-Là on va le configurer. Clavier :
+                  </div>
 
-<code>dpkg-reconfigure  keyboard-configuration</code>
 
-</p>
+			            <div class="col-md-6">
 
+                      					                <p>Generic 105 key (intl)PC
+                      -
+                      > French
+                      -
+                      > Français
+                      -
+                      > The default for the keyboard layout
+                      -
+                      > No compose key
+                      Timezone :
+                      <code>dpkg-reconfigure tzdata</code>
+                      Choisissez EUROPE
+                      -
+                      > PARIS, c'est fait!</p>
 
 
+                      					<!-- Point 6 -->
 
 
+                      <p><b>6.</b>
+                      Initialiser le WIFI par la
+                      commande suivante :
+                      <code>sudo nmtui</code>
+                      Choisissez ACTIVATE A CONNECTION
+                      -
+                      > Choisissez votre wifi
+                      -
+                      > Entrez le MdP, c'est fait!
+                      </p>
 
-				</div>
 
 
-				<div class="col-md-6">
-					                <p>Generic 105 key (intl)PC
--
-> French
--
-> Français
--
-> The default for the keyboard layout
--
-> No compose key
-Timezone :
-<code>dpkg-reconfigure tzdata</code>
-Choisissez EUROPE
--
-> PARIS, c'est fait!</p>
+                      					<!-- Point 7 -->
 
 
-					<!-- Point 6 -->
+                      <p><b>7.</b>
+                      Redémarrez pour rendre effectifs les changements
+                      <code>sudo reboot</code>
+                      </p>
 
 
-<p><b>6.</b>
-Initialiser le WIFI par la
-commande suivante :
-<code>sudo nmtui</code>
-Choisissez ACTIVATE A CONNECTION
--
-> Choisissez votre wifi
--
-> Entrez le MdP, c'est fait!
-</p>
 
+                      					<!-- Point 8 -->
 
 
-					<!-- Point 7 -->
+                                      <p><b>8.</b>
+                      Actualisez les sources
+                      <code>sudo apt-get update</code> puis, redémarrez pour rendre effectifs les
+                      changements sudo reboot</p>
 
 
-<p><b>7.</b>
-Redémarrez pour rendre effectifs les changements
-<code>sudo reboot</code>
-</p>
+                      					<!-- Point 9 -->
 
 
+                                      <p><b>9.</b>
+                      Appliquez les changements avec les nouvelles sources
+                      <code>sudo apt-get upgrade</code>
+                      Cette Opération dure environ 25 minutres.</p>
+                                      <p>
 
-					<!-- Point 8 -->
+                      <code> sudo reboot </code> </p>
 
 
-                <p><b>8.</b>
-Actualisez les sources
-<code>sudo apt-get update</code> puis, redémarrez pour rendre effectifs les
-changements sudo reboot</p>
+                            <p></p>
+                            <p></p>
 
-
-					<!-- Point 9 -->
-
-
-                <p><b>9.</b>
-Appliquez les changements avec les nouvelles sources
-<code>sudo apt-get upgrade</code>
-Cette Opération dure environ 25 minutres.</p>
-                <p>
-
-<code> sudo reboot </code> </p>
-
-
-
-
-
-
-
-                <p></p>
-                <p></p>
-
-				</div>
-				</div>
+                     </div>
+				          </div>
 				</div>
 				<div class="line"></div>
 
@@ -374,28 +362,26 @@ Cette commande signifie
 
      <div class="container-fluid">
 				<div class="raw">
-				<h2 id="st3">Sécurisation du serveur Linux</h2>
-				<div class="col-md-12">
+				  <h2 id="st3">Sécurisation du serveur Linux</h2>
+				    <div class="col-md-12">
 
 
-					<!-- Point 15 -->
+					             <!-- Point 15 -->
 
 
-                <p><b>15.</b> Maintenant on va sécuriser l'accès ssh par une double authentification. 2FA ( deux facteurs d'authentification). Il faut don déjà installer le logiciel google authenticator <code> sudo apt-get install libpam-google-authenticator</code>.
-			En suite il faut telecharger google authenticator sur le smartphone. Une fois l'app installée, lancer la commande <code>google-authenticator</code>. Scanner le QR code avec l'app Google Authenticator. Répondre Yes aux 4 questions. Maintenant il faut configurer le serveur.
-			Pour cela il faut ouvrir la config de la librairie pam par le code suivant :
-			<code>sudo nano /etc/pam.d/sshd</code> et rajouter tout en bas du document "auth required pam_google_authenticator.so". Enregistrer et fermer. Désormais il faut configurer le prgroamme openssh et lui faire admettre la double authetification. Pour cela :
-			<code>sudo nano /etc/ssh/sshd_config</code> puis changer la ligne "ChallengeResponseAuthentication no" en "ChallengeResponseAuthentication yes".
-			Pour la prise en compte on va redémarrer le service openssh : <code>sudo service sshd restart</code> .
-			Tout est prêt. Si vous etes déjà connecté en ssh, ne pas fermer la cession, ouvrir un nouveau terminal et essayer. Ainsi si ça ne fonctionne pas, la connexion au serveur distant n'est pas perdue.
-			</p>
+                        <p><b>15.</b> Maintenant on va sécuriser l'accès ssh par une double authentification. 2FA ( deux facteurs d'authentification). Il faut don déjà installer le logiciel google authenticator <code> sudo apt-get install libpam-google-authenticator</code>.
+        			En suite il faut telecharger google authenticator sur le smartphone. Une fois l'app installée, lancer la commande <code>google-authenticator</code>. Scanner le QR code avec l'app Google Authenticator. Répondre Yes aux 4 questions. Maintenant il faut configurer le serveur.
+        			Pour cela il faut ouvrir la config de la librairie pam par le code suivant :
+        			<code>sudo nano /etc/pam.d/sshd</code> et rajouter tout en bas du document "auth required pam_google_authenticator.so". Enregistrer et fermer. Désormais il faut configurer le prgroamme openssh et lui faire admettre la double authetification. Pour cela :
+        			<code>sudo nano /etc/ssh/sshd_config</code> puis changer la ligne "ChallengeResponseAuthentication no" en "ChallengeResponseAuthentication yes".
+        			Pour la prise en compte on va redémarrer le service openssh : <code>sudo service sshd restart</code> .
+        			Tout est prêt. Si vous etes déjà connecté en ssh, ne pas fermer la cession, ouvrir un nouveau terminal et essayer. Ainsi si ça ne fonctionne pas, la connexion au serveur distant n'est pas perdue.
+        			</p>
 
+				  </div>
 				</div>
+			</div>
 
-
-
-				</div>
-				</div>
 				<div class="line"></div>
 
 		<div class="container-fluid">
@@ -403,172 +389,167 @@ Cette commande signifie
 
                 <h2 id="st4">Configuration du DynHost OVH</h2>
 
+			                       <!-- Point 16 -->
 
+                    <p><b>16.</b> Configuration du DynHost OVH.
 
-			<!-- Point 16 -->
+                    <br>
+                    <br>
+                    Le procédé de création du DNS sur OVH se fait dans la section "domaine", séléctionnez le domaine elder-easycare, puis allez dans le menu "DynHost".
+                    <br>
+                    <br>
+                    Pour créer un DynHost sur OVH il faut commencer par créer un DynHost en ciblant l'adresse IP publique voulue, en l'occurence celle de la box du bénéficiaire.
+                    Après quoi, on se rend dans le menu "Gérer les accès", on y crée un identfiant, déféni le suffixe de l’identifiant, le sous-domaine, login et mot de passe.
+                    <br>
+                    <br>
+                    Lien d'un tuto de configuration de DynHost d'OVH : https://www.p3ter.fr/gestion-du-dyndns-sous-linux-avec-ovh.html
+                    <br>
+                    <br>
+                    Exemple :
+                    <br>
+                    <br>
+                    DynHost : jeedom.elder-easycare.fr
+                    <br>
+                    Suffixe identifiant : elder-easycare.fr-andrea (dans le fichier.conf il sera noté dans la partie login comme si dessous)
+                    <br>
+                    Sous-domaine : jeedom.elder-easycare.fr (correspond à l'url du DNS)
+                    <br>
+                    Mot de passe : "mot de passe habituel"
 
+                    <br>
+                    <br>
+                    Installation de ddclient.conf :
 
+                    <br>
+                    <br>
+                    Installation : sudo apt-get install ddclient
+                    <br>
+                    <br>
+                    Editer le fichier /etc/ddclient.conf avec la commande nano.
+                    <br>
+                    <br>
+                    Le fichier par défaut, sera comme si dessous :
+                    <br>
+                    <br>
+                    # Configuration file for ddclient generated by debconf
+                    <br>
+                    #
+                    <br>
+                    # /etc/ddclient.conf
+                    <br>
+                    protocol=dyndns2
+                    <br>
+                    use=web, web=checkip.dyndns.com
+                    <br>
+                    server=www.ovh.com
+                    <br>
+                    <b>login=nomdedomaine.net-login
+                    <br>
+                    password='MDP_du_compte_de_gestion_dynhost'
+                    <br>
+                    sous.nomdedomaine.fr_lié_au_compte_de_gestion</b>
+                    <br>
+                    <br>
+                    Les trois données notables à changer seront celles, noté en gras, qui correspondent aux données éditées sur le site d’OVH. A quoi on ajoutera la commande daemon=x, qui permet de donner une unité de temps et ainsi, d’exécuter la commande tous les X minutes, heures, etc. (1 minute de tempo : daemon=60).
+                    <br>
+                    <br>
+                    Fichier ddclient.conf fonctionnel le 25/04/2018 :
+                    <br>
+                    <br>
+                    daemon=60
+                    <br>
+                    protocol=dyndns2
+                    <br>
+                    use=web, web=checkip.dyndns.com
+                    <br>
+                    server=www.ovh.com
+                    <br>
+                    login=elder-easycare.fr-andrea
+                    <br>
+                    password='mot de passe habituel'
+                    <br>
+                    jeedom.elder-easycare.fr
+                    <br>
+                    <br>
+                    On peut également y ajouter d’autre lignes, correspondant à d’autre paramètre, comme si dessous :
+                    <br>
+                    <br>
+                    daemon=600                  # check every 600 seconds
+                    <br>
+                    syslog=yes                  # log update msgs to syslog
+                    <br>
+                    mail=root                   # mail all msgs to root
+                    <br>
+                    mail-failure=root           # mail failed update msgs to root
+                    <br>
+                    pid=/var/run/ddclient.pid   # record PID in file.
+                    <br>
+                    cache=/tmp/ddclient.cache   # Cache file
+                    <br>
+                    ssl=yes                     #Protocol ssl
+                    <br>
+                    ### Select one of these options to determine your IP address
+                    <br>
+                    ## via hardware interface (if you don't have a router/firewall)
+                    <br>
+                    #use=if, if=eth0
+                    <br>
+                    ## via our CheckIP server
+                    <br>
+                    use=web, web=checkip.dyndns.com/, web-skip='IP Address'
+                    <br>
+                    ## from the status page for a linksys router/firewall
+                    <br>
+                    #use=linksys, fw=linksys, fw-login=admin, fw-password=admin
+                    <br>
+                    ## from a FW status page
+                    <br>
+                    #fw-login=admin, fw-password=XXXXXX
+                    <br>
+                    #use=fw, fw=192.168.1.254/status.htm, fw-skip='IP Address'
+                    <br>
+                    <br>
+                     ## Enter your Ovh DynHost username and password here
+                    <br>
+                    login=your-login           # your Ovh DynHost username
+                    <br>
+                    password=your-password     # your Ovh DynHost password
+                    <br>
+                    ## This section requires no changes unless you need to set a default proxy server
+                    ## or you need to bypass your proxy server (because it interferes with the updates)
+                    <br>
+                    protocol=dyndns2                    # default protocol
+                    <br>
+                    server=www.ovh.com           # default server
+                    <br>
+                    #server=members.dyndns.org:8245     # default server (bypassing proxies)
+                    <br>
+                    #proxy=fasthttp.sympatico.ca:80     # default proxy
+                    <br>
+                    ## Default options for Dynamic/Static DNS Hosts
+                    <br>
+                    #mx=             # default MX host (leave undefined by default)
+                    <br>
+                    #backupmx=NO     # MX host is primary MX? (leave undefined by default)
+                    <br>
+                    #wildcard=YES     # add wildcard CNAME?
+                    <br>
+                    ## Dynamic DNS hosts go here
+                    <br>
+                    votre.domaine.com
+                    <br>
+                    ## Static DNS hosts go here
+                    <br>
+                    #static=yes, your-static-host.dyndns.org,another-static-host.dyndns.org
+                    <br>
+                    ## Custom DNS hosts go here
+                    <br>
+                    #custom=yes, your-domain.top-level,your-other-domain.top-level
+                    <br>
 
-
-<p><b>16.</b> Configuration du DynHost OVH.
-
-<br>
-<br>
-Le procéder de création du DNS sur OVH se fait dans la section "domaine", séléctionnez le domaine elder-easycare, puis allez dans le menu "DynHost".
-<br>
-<br>
-Pour créer un DynHost sur OVH il faut commencer par créer un DynHost en ciblant l'adresse IP publique voulue, en l'occurence celle de la box du bénéficiaire.
-Après quoi, on se rend dans le menu "Gérer les accès", on y crée un identfiant, déféni le suffixe de l’identifiant, le sous-domaine, login et mot de passe.
-<br>
-<br>
-Lien d'un tuto de configuration de DynHost d'OVH : https://www.p3ter.fr/gestion-du-dyndns-sous-linux-avec-ovh.html
-<br>
-<br>
-Exemple :
-<br>
-<br>
-DynHost : jeedom.elder-easycare.fr
-<br>
-Suffixe identifiant : elder-easycare.fr-andrea (dans le fichier.conf il sera noté dans la partie login comme si dessous)
-<br>
-Sous-domaine : jeedom.elder-easycare.fr (correspond à l'url du DNS)
-<br>
-Mot de passe : "mot de passe habituel"
-
-<br>
-<br>
-Installation de ddclient.conf :
-
-<br>
-<br>
-Installation : sudo apt-get install ddclient
-<br>
-<br>
-Editer le fichier /etc/ddclient.conf avec la commande nano.
-<br>
-<br>
-Le fichier par défaut, sera comme si dessous :
-<br>
-<br>
-# Configuration file for ddclient generated by debconf
-<br>
-#
-<br>
-# /etc/ddclient.conf
-<br>
-protocol=dyndns2
-<br>
-use=web, web=checkip.dyndns.com
-<br>
-server=www.ovh.com
-<br>
-<b>login=nomdedomaine.net-login
-<br>
-password='MDP_du_compte_de_gestion_dynhost'
-<br>
-sous.nomdedomaine.fr_lié_au_compte_de_gestion</b>
-<br>
-<br>
-Les trois données notables à changer seront celles, noté en gras, qui correspondent aux données éditées sur le site d’OVH. A quoi on ajoutera la commande daemon=x, qui permet de donner une unité de temps et ainsi, d’exécuter la commande tous les X minutes, heures, etc. (1 minute de tempo : daemon=60).
-<br>
-<br>
-Fichier ddclient.conf fonctionnel le 25/04/2018 :
-<br>
-<br>
-daemon=60
-<br>
-protocol=dyndns2
-<br>
-use=web, web=checkip.dyndns.com
-<br>
-server=www.ovh.com
-<br>
-login=elder-easycare.fr-andrea
-<br>
-password='mot de passe habituel'
-<br>
-jeedom.elder-easycare.fr
-<br>
-<br>
-On peut également y ajouter d’autre lignes, correspondant à d’autre paramètre, comme si dessous :
-<br>
-<br>
-daemon=600                  # check every 600 seconds
-<br>
-syslog=yes                  # log update msgs to syslog
-<br>
-mail=root                   # mail all msgs to root
-<br>
-mail-failure=root           # mail failed update msgs to root
-<br>
-pid=/var/run/ddclient.pid   # record PID in file.
-<br>
-cache=/tmp/ddclient.cache   # Cache file
-<br>
-ssl=yes                     #Protocol ssl
-<br>
-### Select one of these options to determine your IP address
-<br>
-## via hardware interface (if you don't have a router/firewall)
-<br>
-#use=if, if=eth0
-<br>
-## via our CheckIP server
-<br>
-use=web, web=checkip.dyndns.com/, web-skip='IP Address'
-<br>
-## from the status page for a linksys router/firewall
-<br>
-#use=linksys, fw=linksys, fw-login=admin, fw-password=admin
-<br>
-## from a FW status page
-<br>
-#fw-login=admin, fw-password=XXXXXX
-<br>
-#use=fw, fw=192.168.1.254/status.htm, fw-skip='IP Address'
-<br>
-<br>
- ## Enter your Ovh DynHost username and password here
-<br>
-login=your-login           # your Ovh DynHost username
-<br>
-password=your-password     # your Ovh DynHost password
-<br>
-## This section requires no changes unless you need to set a default proxy server
-## or you need to bypass your proxy server (because it interferes with the updates)
-<br>
-protocol=dyndns2                    # default protocol
-<br>
-server=www.ovh.com           # default server
-<br>
-#server=members.dyndns.org:8245     # default server (bypassing proxies)
-<br>
-#proxy=fasthttp.sympatico.ca:80     # default proxy
-<br>
-## Default options for Dynamic/Static DNS Hosts
-<br>
-#mx=             # default MX host (leave undefined by default)
-<br>
-#backupmx=NO     # MX host is primary MX? (leave undefined by default)
-<br>
-#wildcard=YES     # add wildcard CNAME?
-<br>
-## Dynamic DNS hosts go here
-<br>
-votre.domaine.com
-<br>
-## Static DNS hosts go here
-<br>
-#static=yes, your-static-host.dyndns.org,another-static-host.dyndns.org
-<br>
-## Custom DNS hosts go here
-<br>
-#custom=yes, your-domain.top-level,your-other-domain.top-level
-<br>
-
-			</p>
-            </div>
-        </div>
+                    			</p>
+                                </div>
+                            </div>
 
 
 
