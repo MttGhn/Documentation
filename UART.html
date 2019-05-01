@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Documentation Elder EasyCare</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-spy="scroll">
+
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Elders EasyCare</h3>
+            </div>
+
+            <div>
+                <ul class="list-unstyled components">
+                    <p>Faire fonctionner UART</p>
+                    <li class="active">
+
+                    <li><a href="#st1">I - Préparer la carte</a></li>
+                    <li><a href="#st2">II - Préaprer Windows 10</a></li>
+                    <li><a href="#st3">III - Administrer via UART</a></li>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://github.com/MttGhn/index" class="download">GO ON TOP</a></li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Menu</span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.html">Preparation OPI PC+</a></li>
+                            <li><a href="Sc%C3%A9narios.html">Scénarios</a></li>
+                            <li><a href="Virtuels.html">Virtuels</a></li>
+                            <li><a href="UART.html">UART</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Point 1 -->
+
+            <div class="container-fluid">
+                <h2>Configurer ou administrer un serveur Linux grâce à l'UART</h2>
+                <p>L'UART est une connexion USB entre le module de developpement (OPI PC +) et un ordinateur pour avoir accès au terminal de commande.</p>
+                <br>
+                <b>Avantages :</b>
+                <p>- Pratique si aucune configuration n'est présente sur la carte. Soit à l'initialisation pour configurer le réseau, soit lorsque le réseau à été perdu.</p>
+                <p>- Parfait pour éviter l'utilisation d'un écran supplémentaire.</p>
+                <br>
+                <b>Désavantages :</b>
+                <p>-Contrairement au SSH, cette methode ne permet pas l'accès distant et necessite une proximité immediate du module et de l'oppérateur. </p>
+                <br>
+                <br>
+                <div class="raw">
+                    <h2 id="st1">Préparation du module de developpment (OPI PC+)</h2>
+                    <div class="col-md-6">
+
+                        <p><b>1.</b>
+                            Installer une distribution Linux sur Orange Pi PC + <u><a href="file:///C:/Users/matte/Desktop/DOC/index.html#st1">comme décrit ici</a></u>
+                        </p>
+                        <p><b>2.</b> Relier les pins du cable UART sur la carte comme indiqué que la photo. </p>
+                        <img src="dispoition%20UART.PNG" alt="montre la disposition des pins UART sur un ORANGE PI PC +">
+                        <p> <br> - Le cable Noir est le GND donc la masse, il faut le brancher sur le GND de la carte. <br> - Le cable vert est le TX, il doit donc etre branché sur le RX de la carte. <br> - Le cable blanc est le RX, il doit donc etre branché sur le TX de la carte.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Point 2 -->
+
+            <div class="container-fluid">
+                <div class="raw">
+                    <h2 id="st2">Préparer Windows 10</h2>
+                    <div class="col-md-6">
+
+                        <p><b>3.</b>
+                            Brancher le cable UART à l'ordinateur. Il doit signaler par un son le branchement d'un nouveau peripherique. W10 l'installe mais pas correctement...
+                            <br>
+                            Installez donc le pilote suivant : <u><a href="https://github.com/MttGhn/index/raw/master/PL2303_Prolific_GPS_1013_20090319.exe">Pilotes UART pour w10.</a></u>
+                            <br>
+                            Rendez-vous dans le Gestionnaire de péripheriques et mettre à jour le péripherique manuellement comme ci dessous :</p>
+                        <img src="m%C3%A0j%20manulle%20UART.gif" alt="installation du nouveau pilote">
+
+
+                        <br><br>
+                        Les pilotes sont installés, Windows 10 est donc prêt à fonctionner avec la liaison UART.
+                        <br>
+                        <br><br><br>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Point 3 -->
+
+            <div class="container-fluid">
+                <div class="raw">
+                    <h2 id="st3">Administrer via UART grace à Putty</h2>
+                    <div class="col-md-6">
+
+                        <p><b>4.</b><a href="https://github.com/MttGhn/index/raw/master/putty-0.71-installer.msi"> <u>Télécharger</u></a> puis installer Putty, qui permet d'avoir accès au terminal de commande de l'OPI PC +.</p>
+                      
+                        <p>lancer le gestionnaire de péripheriques et se rendre dans l'encart <i>"Ports(COM et LPT)"</i> pour connaitre le numéro du port attribué au cable UART. Ici dans l'exemble il s'agit du port <i>"(COM3)"</i></p>
+                        <br>
+                        <p>Ouvrir Puty et configurer comme ci dessous :
+                        </p><img src="Putty%20config.PNG" alt="">
+                        <p>Serial line : (COMx) comme indiqué dans le gestionnaire de péripheriques</p>
+                        <p>Speed : 115200</p>
+                        <p>Connexion type : Serial</p>
+                        <p>Cliquez sur <i>OPEN</i> et le teminal se lance!</p>
+
+                        <br><br><br>
+                        <p>GG WP</p>
+                        
+
+                        
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- jQuery CDN -->
+            <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+            <!-- Bootstrap Js CDN -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <!-- jQuery Nicescroll CDN -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#sidebar").niceScroll({
+                        cursorcolor: '#53619d',
+                        cursorwidth: 4,
+                        cursorborder: 'none'
+                    });
+
+                    $('#sidebarCollapse').on('click', function() {
+                        $('#sidebar, #content').toggleClass('active');
+                        $('.collapse.in').toggleClass('in');
+                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                    });
+                });
+                $('body').scrollspy({
+                    target: ".navbar"
+                })
+            </script>
+</body>
+
+</html>
+
+<!-- STRUCTURE DE DIV paragrpahe double!
+
+<div class="container-fluid">
+<div class="raw">
+<h1>Collapsible Sidebar Using Bootstrap 3</h1>
+<div class="col-md-6">
+
+	<p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+	</div>
+
+
+	<div class="col-md-6">
+
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+
+		</div>
+		</div>
+		</div>
+		<div class="line"></div>
+-->
+
+<!--
+STRUCTURE D UN PARAGRAPHE SIMPLE
+
+<div class="container-fluid">
+<div class="raw">
+<h1>Collapsible Sidebar Using Bootstrap 3</h1>
+
+
+	<p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+		</div>
+		</div>
+
+<div class="line"></div>
+-->
